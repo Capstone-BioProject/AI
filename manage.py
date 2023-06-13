@@ -6,13 +6,12 @@ import gluonnlp as nlp
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
 
-
 # 모델 정의
 class BERTClassifier(nn.Module):  ## 클래스를 상속
     def __init__(self,
                  bert,
                  hidden_size=768,
-                 num_classes=61,  ##클래스 수 조정##
+                 num_classes=46,  ##클래스 수 조정##
                  dr_rate=None,
                  params=None):
         super(BERTClassifier, self).__init__()
