@@ -21,7 +21,7 @@ def new_softmax(a):
 
 
 # 예측 모델 설정
-def predict(predict_sentence):
+def predict(predict_sentence,sex):
     data = [predict_sentence, '0']
     dataset_another = [data]
 
@@ -64,9 +64,17 @@ def predict(predict_sentence):
             #for logit in logits:
             #    print(logit, end=' ')
              #   probability.append(np.round(logit, 3))
-            for i in range(0,45):
-                if np.argmax(logits) == i: 
-                  probability.append(disease[i])
+            if sex=='male':
+                sorted_indices = np.argsort(logits)[::-1]  # 예측 확률이 큰 순서대로 정렬된 인덱스
+                for i in sorted_indices:
+                    if i < len(disease) and logits[i] > 0:
+                        if(disease[i]!='자궁근종' and disease[i]!='질염'):  # disease 인덱스 범위 내에서 예측 확률이 양수인 경우에만 출력
+                            probability.append(disease[i])
+                            break
+            else:
+                for i in range(0,45):
+                    if np.argmax(logits) == i: 
+                        probability.append(disease[i])
             print(probability)
 
     return probability
