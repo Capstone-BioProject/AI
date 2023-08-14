@@ -6,7 +6,7 @@
 
 ### 1. 학습 데이터셋 (*출처: 하이닥)
 
-<img src="/img/csv.png" alt="csv" style="width: 100%;">
+<img src="/img/csv.png" alt="csv" style="width: 50%;">
 
 약 4800개의 데이터를 학습
 
