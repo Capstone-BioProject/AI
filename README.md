@@ -6,7 +6,7 @@
 
 ### 1. 학습 데이터셋 (*출처: 하이닥)
 
-
+<img src="/img/csv.png" alt="csv" style="width: 100%;">
 
 ### 2. 정확도
 
